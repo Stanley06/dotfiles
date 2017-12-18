@@ -35,6 +35,7 @@ Plugin 'DoxygenToolkit.vim'               " Doxygen comments
 Plugin 'derekwyatt/vim-scala'             " scala plugin
 Plugin 'a.vim'                            " Alternate for C/C++ Header/Source navigation
 Plugin 'rhysd/vim-clang-format'           " Clang format for C/C++/ObjC
+Plugin 'tell-k/vim-autopep8'              " Python formatter
 Plugin 'luochen1990/rainbow'              " Rainbow parenthesis coloring
 Plugin 'scrooloose/nerdcommenter'         " NERDCommenter for easy commenting
 Plugin 'majutsushi/tagbar'                " Easy Ctag explorer
@@ -156,6 +157,11 @@ let g:clang_format#auto_formatexpr = 1
 autocmd FileType c,cpp,objc setlocal textwidth=0
 autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
 autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
+
+let g:autopep8_disable_show_diff=0
+autocmd FileType python nnoremap <buffer><Leader>cf :<C-u>Autopep8<CR>
+autocmd FileType python vnoremap <buffer><Leader>cf :Autopep8<CR>
+autocmd FileType python set equalprg=autopep8\ -
 
 " rather than usign vim-clang-format, can also use clang-format.py
 "autocmd FileType python nnoremap <buffer><Leader>cf :<C-u>:pyf ~/bin/clang-format.py<CR>
