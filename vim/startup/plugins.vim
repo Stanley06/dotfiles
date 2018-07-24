@@ -176,6 +176,7 @@ let g:ale_linters = {
 \    'java'   : ['checkstyle'],
 \    'python' : ['pylint'],
 \    'sh'     : ['shellcheck'],
+\    'yaml'   : ['yamllint'],
 \}
 
 let g:ale_sign_error = 'xx'
