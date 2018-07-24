@@ -1,34 +1,34 @@
 [user]
-	name = Shijie Li
-	email = lishijie0602@gmail.com
+    name = stanley06
+    email = stanleyli0602@gmail.com
 [filter "media"]
-	clean = git-media-clean %f
-	smudge = git-media-smudge %f
+    clean = git-media-clean %f
+    smudge = git-media-smudge %f
 [push]
-	default = simple
+    default = simple
 [color]
-	ui = true
-	status = true
-        branch = true
-	diff = true
+    ui = true
+    status = true
+    branch = true
+    diff = true
 [core]
-        preloadindex = true
-        pager = less -R -n -F -X -E
-        excludesfile = ~/.gitignore_global
+    preloadindex = true
+    pager = less -R -n -F -X -E
+    excludesfile = ~/.gitignore_global
 [pager]
-        status = true
+    status = true
 [grep]
-        lineNumber = true
+    lineNumber = true
 [mergetool]
-        keepBackup = false
+    keepBackup = false
 [mergetool "fugitive"]
-        cmd = vim -f -c \"Gvdiff\" \"$MERGED\"
+    cmd = vim -f -c \"Gvdiff\" \"$MERGED\"
 [merge]
-        tool = fugitive
+    tool = fugitive
 [pull]
-        rebase = true
+    rebase = true
 [push]
-        default = simple
+    default = simple
 [alias]
     br = branch
     ci = commit
@@ -51,4 +51,4 @@
     # List aliases
     la = "!git config -l | grep alias | cut -c 7-"
 [include]
-        path = ~/.gitconfig_local
+    path = ~/.gitconfig_local
