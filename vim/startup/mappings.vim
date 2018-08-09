@@ -76,6 +76,11 @@ nnoremap <leader>ff :CtrlP<CR>
 nnoremap <leader>tn :tabnext<CR>
 nnoremap <leader>tp :tabprevious<CR>
 
+" tags jum
+nnoremap <leader>jd <C-]>
+nnoremap <leader>jb <C-O>
+nnoremap <leader>tt :TagbarToggle<CR>
+
 " Open and source .vimrc and startup scripts
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>em :vsplit ~/.vim/startup/mappings.vim<cr>

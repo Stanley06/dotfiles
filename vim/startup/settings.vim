@@ -5,6 +5,8 @@ let mapleader=","
 set nocompatible
 let g:platform = GetPlatform()
 
+set tags=./tags;,tags;
+
 "" encoding
 scriptencoding utf-8
 set encoding=utf-8

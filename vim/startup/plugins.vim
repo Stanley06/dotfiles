@@ -39,9 +39,11 @@ Plugin 'tell-k/vim-autopep8'              " Python formatter
 Plugin 'luochen1990/rainbow'              " Rainbow parenthesis coloring
 Plugin 'scrooloose/nerdcommenter'         " NERDCommenter for easy commenting
 Plugin 'majutsushi/tagbar'                " Easy Ctag explorer
+Plugin 'ludovicchabant/vim-gutentags'     " tag file manager
 Plugin 'tpope/vim-surround'               " generate surroundings
 Plugin 'machakann/vim-highlightedyank'    " highlighted the yanked region
 Plugin 'Yggdroot/indentLine'              " indentline
+
 
 " Linux-Only plug-ins
 if g:platform == "Linux" || g:platform == "Darwin"
@@ -85,7 +87,7 @@ let g:airline_left_sep=''
 let g:airline_right_sep=''
 
 "  tmuxline config and help
-    " tmuxline command help 
+    " tmuxline command help
     " step 1) set the theme
     " :Tmuxline [themem] [preset]
     " step 2) generate scripts which can run in tmux.conf
@@ -142,6 +144,8 @@ let g:gitgutter_max_signs = 1000
 
 "  ctrlp config and help
 set wildignore+=*.so,*.swp,*.zip
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlPMRU'
 let g:ctrlp_use_caching = 1 "enable caching
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']  " ignore files in .gitignore
 let g:ctrlp_working_path_mode = 'ra'
@@ -177,7 +181,10 @@ let g:ale_linters = {
 \    'python' : ['pylint'],
 \    'sh'     : ['shellcheck'],
 \    'yaml'   : ['yamllint'],
+\    'php'    : ['phpstan'],
 \}
+
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
 let g:ale_sign_error = 'xx'
 let g:ale_sign_warning = '!!'
