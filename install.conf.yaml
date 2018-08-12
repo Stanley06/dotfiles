@@ -32,7 +32,7 @@
       stdout: true
       stderr: true
     -
-      command: vim +PluginInstall +qall
+      command: vim +PlugUpdate +PlugUpgrade +UpdateRemotePlugins +qall
       stdin: true
       stdout: true
       stderr: true

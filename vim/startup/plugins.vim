@@ -1,80 +1,64 @@
-"" Plugins and plugin configuration
-"
-" Brief help for Vbundle
-" :PluginList          - list configured plugins
-" :PluginInstall(!)    - install (update) plugins
-" :PluginSearch(!)     - search (or refresh cache first) for foo
-" :PluginClean(!)      - confirm (or auto-approve) removal of unused plugins
-"
-" see :h vundle for more details or wiki for FAQ
-" non-plugin staffs come after this line"
+"set nocompatible
+"filetype off
+call plug#begin('~/.vim/plugged')
 
-set nocompatible
-filetype off
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-Plugin 'VundleVim/Vundle.vim'             " Let Vundle manage itself
-Plugin 'benmills/vimux'                   " vim and tmux integration
-Plugin 'tpope/vim-fugitive'               " Fugitive Git Wrapper
-Plugin 'christoomey/vim-tmux-navigator'   " Tmux movement mappings
-Plugin 'mhinz/vim-grepper'                " vim/git-grep integration
-Plugin 'airblade/vim-gitgutter'           " Diff signs in gutter for Git index/working diffs
-Plugin 'ctrlpvim/ctrlp.vim'               " ctrlP Plugin
-Plugin 'Valloric/ListToggle'              " ListToggle for display of quickfix/location list
-Plugin 'godlygeek/tabular'                " to align by a char
-Plugin 'vim-airline/vim-airline'          " Airline for pretty status/tab lines
-Plugin 'vim-airline/vim-airline-themes'   " airline themes
-Plugin 'altercation/vim-colors-solarized' " Colorschemes
-Plugin 'endel/vim-github-colorscheme'     " github color schemes
-Plugin 'flazz/vim-colorschemes'           " vim color schemes
-Plugin 'w0rp/ale'                         " Asynchronized Syntax checking
-Plugin 'DoxygenToolkit.vim'               " Doxygen comments
-Plugin 'derekwyatt/vim-scala'             " scala plugin
-Plugin 'a.vim'                            " Alternate for C/C++ Header/Source navigation
-Plugin 'rhysd/vim-clang-format'           " Clang format for C/C++/ObjC
-Plugin 'tell-k/vim-autopep8'              " Python formatter
-Plugin 'luochen1990/rainbow'              " Rainbow parenthesis coloring
-Plugin 'scrooloose/nerdcommenter'         " NERDCommenter for easy commenting
-Plugin 'majutsushi/tagbar'                " Easy Ctag explorer
-Plugin 'ludovicchabant/vim-gutentags'     " tag file manager
-Plugin 'tpope/vim-surround'               " generate surroundings
-Plugin 'machakann/vim-highlightedyank'    " highlighted the yanked region
-Plugin 'Yggdroot/indentLine'              " indentline
-
+Plug 'w0rp/ale'                                        " Asynchronized Syntax checking
+Plug 'benmills/vimux'                                  " vim and tmux integration
+Plug 'tpope/vim-fugitive'                              " Fugitive Git Wrapper
+Plug 'christoomey/vim-tmux-navigator'                  " Tmux movement mappings
+Plug 'ctrlpvim/ctrlp.vim'                              " ctrlP Plugin
+Plug 'majutsushi/tagbar'                               " Easy Ctag explorer
+Plug 'ludovicchabant/vim-gutentags'                    " tag file manager
+Plug 'mhinz/vim-grepper'                               " vim/git-grep integration
+Plug 'airblade/vim-gitgutter'                          " Diff signs in gutter for Git index/working diffs
+Plug 'Valloric/ListToggle'                             " ListToggle for display of quickfix/location list
+Plug 'godlygeek/tabular'                               " to align by a char
+Plug 'vim-airline/vim-airline'                         " Airline for pretty status/tab lines
+Plug 'vim-airline/vim-airline-themes'                  " airline themes
+Plug 'altercation/vim-colors-solarized'                " Colorschemes
+Plug 'endel/vim-github-colorscheme'                    " github color schemes
+Plug 'flazz/vim-colorschemes'                          " vim color schemes
+Plug 'vim-scripts/a.vim', { 'for': 'cpp' }             " Alternate for C/C++ Header/Source navigation
+Plug 'vim-scripts/DoxygenToolkit.vim'                  " Doxygen comments
+Plug 'derekwyatt/vim-scala', { 'for': 'scala' }        " scala plugin
+Plug 'tell-k/vim-autopep8', { 'for': 'python' }        " Python formatter
+Plug 'rhysd/vim-clang-format', { 'on': 'ClangFormat' } " Clang format for C/C++/ObjC
+Plug 'luochen1990/rainbow'                             " Rainbow parenthesis coloring
+Plug 'scrooloose/nerdcommenter'                        " NERDCommenter for easy commenting
+Plug 'tpope/vim-surround'                              " generate surroundings
+Plug 'machakann/vim-highlightedyank'                   " highlighted the yanked region
+Plug 'Yggdroot/indentLine'                             " indentline
 
 " Linux-Only plug-ins
 if g:platform == "Linux" || g:platform == "Darwin"
-    "Plugin 'Valloric/YouCompleteMe'     " Autocompletion and semantic completion
-    Plugin 'asenac/vim-airline-loclist' " Show Location list output in airline
-    Plugin 'edkolev/tmuxline.vim'       " Nice airline-like tmux prompt
-    Plugin 'SirVer/ultisnips'           " Snippets
-    Plugin 'honza/vim-snippets'
+    "Plug 'Valloric/YouCompleteMe'     " Autocompletion and semantic completion
+    Plug 'asenac/vim-airline-loclist' " Show Location list output in airline
+    Plug 'edkolev/tmuxline.vim'       " Nice airline-like tmux prompt
+    Plug 'SirVer/ultisnips'           " Snippets
+    Plug 'honza/vim-snippets'
 endif
 
 "" Stuff I want to try
-"Plugin 'Lokaltog/vim-easymotion'
-"Plugin 'godlygeek/csapprox'
-"Plugin 'gregsexton/gitv'
-"Plugin 'kana/vim-operator-user'
-"Plugin 'sjl/gundo.vim'
-"Plugin 'airblade/vim-rooter'
-"Plugin 'phleet/vim-arcanist'
-"Plugin 'tpope/vim-vinegar'
-"Plugin 'jiangmiao/auto-pairs'
-"Plugin 'xolox/vim-session'
-"Plugin 'junegunn/vim-easy-align'
-"Plugin 'rhysd/clever-f.vim'
-"Plugin 'tpope/vim-repeat'
-"Plugin 'jlanzarotta/bufexplorer'
-"Plugin 'tpope/vim-speeddating'
-"Plugin 'tpope/vim-unimpaired'
-"Plugin 'tpope/vim-dispatch'
+"Plug 'Lokaltog/vim-easymotion'
+"Plug 'godlygeek/csapprox'
+"Plug 'gregsexton/gitv'
+"Plug 'kana/vim-operator-user'
+"Plug 'sjl/gundo.vim'
+"Plug 'airblade/vim-rooter'
+"Plug 'phleet/vim-arcanist'
+"Plug 'tpope/vim-vinegar'
+"Plug 'jiangmiao/auto-pairs'
+"Plug 'xolox/vim-session'
+"Plug 'junegunn/vim-easy-align'
+"Plug 'rhysd/clever-f.vim'
+"Plug 'tpope/vim-repeat'
+"Plug 'jlanzarotta/bufexplorer'
+"Plug 'tpope/vim-speeddating'
+"Plug 'tpope/vim-unimpaired'
+"Plug 'tpope/vim-dispatch'
 
-call vundle#end()
-filetype plugin indent on
+call plug#end()
+"filetype plugin indent on
 
 "  vim-airline
 let g:airline_theme='base16_pop'
@@ -143,7 +127,6 @@ let g:gitgutter_eager = 0
 let g:gitgutter_max_signs = 1000
 
 "  ctrlp config and help
-set wildignore+=*.so,*.swp,*.zip
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlPMRU'
 let g:ctrlp_use_caching = 1 "enable caching
@@ -188,7 +171,6 @@ autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
 let g:ale_sign_error = 'xx'
 let g:ale_sign_warning = '!!'
-
 let g:ale_sign_column_always = 1
 nmap <silent> <leader>en <Plug>(ale_previous_wrap)
 nmap <silent> <leader>ep <Plug>(ale_next_wrap)

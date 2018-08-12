@@ -113,7 +113,7 @@ set directory=.,~/.vim/tmp
 set history=100
 set wildmode=list:longest,full
 set wildmenu
-set wildignore=*/tmp/*,*.swp,*.o,*.gch,*.pyc,*.jpg,*.gif,*.png,*.a,*.so
+set wildignore=*/tmp/*,*.swp,*.o,*.gch,*.pyc,*.jpg,*.gif,*.png,*.a,*.so,*.zip
 if has("persistent_undo")
   set undofile
   set undodir=~/.vim/undo
