@@ -77,7 +77,8 @@ nnoremap <leader>tn :tabnext<CR>
 nnoremap <leader>tp :tabprevious<CR>
 
 " tags jum
-nnoremap <leader>jd <C-]>
+nnoremap <leader>jd <C-W>]
+nnoremap <leader>jt :tab split<CR><C-]>
 nnoremap <leader>jb <C-O>
 nnoremap <leader>tt :TagbarToggle<CR>
 

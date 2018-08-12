@@ -227,6 +227,23 @@ let g:indentLine_char = '|'
 let g:indentLine_first_char = '¦'
 let g:indentLine_showFirstIndentLevel=1
 
+" gutentas
+set tags=./tags;,tags
+set statusline+=%{gutentags#statusline()}}
+let g:gutentags_modules = ['ctags']
+let g:gutentags_project_root = ['.git', '.hg', '.root']
+let g:gutentags_ctags_tagfile = '.tags'
+
+"let s:vim_tags = expand('~/.cache/tags')
+"let g:gutentags_cache_dir = s:vim_tags
+"let g:gutentags_cache_dir = ".git"
+"let g:gutentags_file_list_command = {
+        "\ 'markers': {
+            "\ '.git': 'git ls-files',
+            "\ '.hg': 'hg files',
+        "\ },
+"\ }
+
 " markdown preview
 let vim_markdown_preview_github=1
 let vim_markdown_preview_toggle=2

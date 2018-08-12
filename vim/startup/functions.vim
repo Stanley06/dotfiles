@@ -1,5 +1,4 @@
 " Functions
-
 function! StripTabsAndTrailingWhitespaces()
     exec "normal ms"
     let _s=@/

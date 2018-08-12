@@ -1,11 +1,9 @@
 "General Settings
-
 let mapleader=","
+
 "" essential
 set nocompatible
 let g:platform = GetPlatform()
-
-set tags=./tags;,tags;
 
 "" encoding
 scriptencoding utf-8
