@@ -41,4 +41,4 @@ GPATH
 GRTAGS
 GTAGS
 TAGS
-tags
+.tags*

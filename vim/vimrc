@@ -1,14 +1,17 @@
-" .vimrc
-" vim:sw=2
-"
+" GVIM Settings
+if has('gui_running')
+    set guioptions-=M    " Don't load Menu bar
+    colorscheme desert
+    set guifont=Monospace\ 11
+else
+    colorscheme jellybeans
+endif
 
-"Load custom settings from separate files
-source ~/.vim/startup/functions.vim " User defined functions
-source ~/.vim/startup/commands.vim  " User defined commands
-source ~/.vim/startup/settings.vim  " Vim settings
-source ~/.vim/startup/plugins.vim   " Plugins and plugins settings
-source ~/.vim/startup/mappings.vim  " Mappings and shortcuts
-source ~/.vim/startup/color.vim     " Syntax coloring
+source ~/.vim/startup/functions.vim
+source ~/.vim/startup/commands.vim
+source ~/.vim/startup/settings.vim
+source ~/.vim/startup/plugins.vim
+source ~/.vim/startup/mappings.vim
 
 " load ~/.vimrc_local customizations if available 
 let $LOCALFILE=expand("~/.vimrc_local")

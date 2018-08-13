@@ -1,4 +1,3 @@
-"set nocompatible
 "filetype off
 call plug#begin('~/.vim/plugged')
 
@@ -15,7 +14,6 @@ Plug 'Valloric/ListToggle'                             " ListToggle for display 
 Plug 'godlygeek/tabular'                               " to align by a char
 Plug 'vim-airline/vim-airline'                         " Airline for pretty status/tab lines
 Plug 'vim-airline/vim-airline-themes'                  " airline themes
-Plug 'altercation/vim-colors-solarized'                " Colorschemes
 Plug 'endel/vim-github-colorscheme'                    " github color schemes
 Plug 'flazz/vim-colorschemes'                          " vim color schemes
 Plug 'vim-scripts/a.vim', { 'for': 'cpp' }             " Alternate for C/C++ Header/Source navigation
@@ -28,34 +26,17 @@ Plug 'scrooloose/nerdcommenter'                        " NERDCommenter for easy 
 Plug 'tpope/vim-surround'                              " generate surroundings
 Plug 'machakann/vim-highlightedyank'                   " highlighted the yanked region
 Plug 'Yggdroot/indentLine'                             " indentline
+Plug 'tpope/vim-vinegar'                               " netrw improvement
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+
 
 " Linux-Only plug-ins
-if g:platform == "Linux" || g:platform == "Darwin"
+"if g:platform == "Linux" || g:platform == "Darwin"
     "Plug 'Valloric/YouCompleteMe'     " Autocompletion and semantic completion
-    Plug 'asenac/vim-airline-loclist' " Show Location list output in airline
-    Plug 'edkolev/tmuxline.vim'       " Nice airline-like tmux prompt
-    Plug 'SirVer/ultisnips'           " Snippets
-    Plug 'honza/vim-snippets'
-endif
-
-"" Stuff I want to try
-"Plug 'Lokaltog/vim-easymotion'
-"Plug 'godlygeek/csapprox'
-"Plug 'gregsexton/gitv'
-"Plug 'kana/vim-operator-user'
-"Plug 'sjl/gundo.vim'
-"Plug 'airblade/vim-rooter'
-"Plug 'phleet/vim-arcanist'
-"Plug 'tpope/vim-vinegar'
-"Plug 'jiangmiao/auto-pairs'
-"Plug 'xolox/vim-session'
-"Plug 'junegunn/vim-easy-align'
-"Plug 'rhysd/clever-f.vim'
-"Plug 'tpope/vim-repeat'
-"Plug 'jlanzarotta/bufexplorer'
-"Plug 'tpope/vim-speeddating'
-"Plug 'tpope/vim-unimpaired'
-"Plug 'tpope/vim-dispatch'
+    "Plug 'asenac/vim-airline-loclist' " Show Location list output in airline
+    "Plug 'edkolev/tmuxline.vim'       " Nice airline-like tmux prompt
+"endif
 
 call plug#end()
 "filetype plugin indent on
@@ -196,12 +177,12 @@ if !has('nvim')
 endif
 
 "   vim-grepper config
-"let g:grepper = {
-    "\ 'tools': ['git', 'grep'],
-    "\ 'open': 0,
-    "\ 'jump': 1,
-    "\ }
-"
+let g:grepper = {
+    \ 'tools': ['git', 'grep'],
+    \ 'open': 1,
+    \ 'jump': 1,
+    \ }
+
 "   indentline
 let g:indentLine_enabled = 0
 let g:indentLine_conceallevel = 10
@@ -210,14 +191,11 @@ let g:indentLine_first_char = '¦'
 let g:indentLine_showFirstIndentLevel=1
 
 " gutentas
-set tags=./tags;,tags
+set tags=./.tags;,.tags
 set statusline+=%{gutentags#statusline()}}
 let g:gutentags_modules = ['ctags']
 let g:gutentags_project_root = ['.git', '.hg', '.root']
 let g:gutentags_ctags_tagfile = '.tags'
-
-"let s:vim_tags = expand('~/.cache/tags')
-"let g:gutentags_cache_dir = s:vim_tags
 "let g:gutentags_cache_dir = ".git"
 "let g:gutentags_file_list_command = {
         "\ 'markers': {

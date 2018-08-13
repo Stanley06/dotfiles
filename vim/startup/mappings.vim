@@ -1,15 +1,5 @@
 "Vim Key Mappings
 
-"Kill the arrow keys to force practice with hjkl
-"no <up> <Nop>
-"no <down> <Nop>
-"no <left> <Nop>
-"no <right> <Nop>
-"ino <up> <Nop>
-"ino <down> <Nop>
-"ino <left> <Nop>
-"ino <right> <Nop>
-
 "" ============================================================================
 ""                           Insert Mode Mappings
 "" ============================================================================
@@ -24,8 +14,17 @@ inoremap jk <esc>
 
 " Map SPACE to za toggle folding
 nnoremap <space> za
+" Visual Search
+vnoremap // y/<C-R>"<CR>
 
-"" F-Keys Mapping
+" Paste with shift+ins
+map <S-Insert> <MiddleMouse>
+map! <S-Insert> <MiddleMouse>
+
+"" ============================================================================
+""                           F-Keys Mapping
+"" ============================================================================
+
 " Toggle paste mode
 set pastetoggle=<F2>
 
@@ -42,9 +41,6 @@ nnoremap <F5> :CtrlPClearCache<CR>
 " Expand Tab Toggle
 nn <F6> :set expandtab!<CR>
 
-" Toggle Gundlo
-nnoremap <F7> :GundoToggle<CR>
-
 " Toggle TabBar
 nnoremap <F8> :TagbarToggle<CR>
 
@@ -57,7 +53,6 @@ inoremap <F10> <ESC>[[oBAEL_LOG_SET_CATEGORY(LOG_CATEGORY);<ESC><C-o>
 " YouCompleteMe mappings
 nnoremap <F12> :YcmForceCompileAndDiagnostics<CR>
 nnoremap <leader>jd :YcmCompleter GoTo<CR>
-
 
 " Vimux mapping
 nnoremap <Leader>rr :w<CR>:call VimuxRunCommand("./" . bufname("%"))<CR>
@@ -83,23 +78,27 @@ nnoremap <leader>jb <C-O>
 nnoremap <leader>tt :TagbarToggle<CR>
 
 " Open and source .vimrc and startup scripts
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-nnoremap <leader>em :vsplit ~/.vim/startup/mappings.vim<cr>
-nnoremap <leader>es :vsplit ~/.vim/startup/settings.vim<cr>
-nnoremap <leader>ep :vsplit ~/.vim/startup/plugins.vim<cr>
-nnoremap <leader>sv :source ~/.vim/vimrc<cr>
-nnoremap <leader>sm :source ~/.vim/startup/mappings.vim<cr>
-nnoremap <leader>sp :source ~/.vim/startup/plugins.vim<cr>
-nnoremap <leader>ss :source ~/.vim/startup/settings.vim<cr>
+nnoremap <leader>ev :vsplit $MYVIMRC<CR>
+nnoremap <leader>em :vsplit ~/.vim/startup/mappings.vim<CR>
+nnoremap <leader>es :vsplit ~/.vim/startup/settings.vim<CR>
+nnoremap <leader>ep :vsplit ~/.vim/startup/plugins.vim<CR>
+nnoremap <leader>sv :source ~/.vim/vimrc<CR>
+nnoremap <leader>sm :source ~/.vim/startup/mappings.vim<CR>
+nnoremap <leader>sp :source ~/.vim/startup/plugins.vim<CR>
+nnoremap <leader>ss :source ~/.vim/startup/settings.vim<CR>
 
 "Nerd Tree
-nnoremap <leader>nt :NERDTreeToggle<cr>
+nnoremap <leader>nt :NERDTreeToggle<CR>
 " Open Nerdtree in new tab
 nnoremap <Leader>h :tabnew %:h<CR>
 nnoremap <Leader>w :call StripTabsAndTrailingWhitespaces()<CR>:w<CR>
-" Visual Search
-vnoremap // y/<C-R>"<CR>
 
-" Paste with shift+ins
-map <S-Insert> <MiddleMouse>
-map! <S-Insert> <MiddleMouse>
+"Kill the arrow keys to force practice with hjkl
+"no <up> <Nop>
+"no <down> <Nop>
+"no <left> <Nop>
+"no <right> <Nop>
+"ino <up> <Nop>
+"ino <down> <Nop>
+"ino <left> <Nop>
+"ino <right> <Nop>

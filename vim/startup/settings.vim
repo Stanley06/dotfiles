@@ -1,13 +1,14 @@
 "General Settings
 let mapleader=","
 
-"" essential
 set nocompatible
 let g:platform = GetPlatform()
 
 "" encoding
 scriptencoding utf-8
 set encoding=utf-8
+
+syntax on
 
 "" moving around, searching and patterns
 set whichwrap+=<,>,[,]
@@ -19,8 +20,6 @@ set wrapscan
 set incsearch
 set hlsearch
 
-" case insensitive search if the search is all lower case 
-" but if search contains upper case, match upper case only
 set ignorecase
 set smartcase
 
@@ -48,6 +47,7 @@ if g:platform != "AIX" && g:platform != "Windows"
 endif
 
 "" using the mouse
+"" shift+mosue can copy from vim
 set mouse=a
 
 "" messages and info
@@ -130,12 +130,3 @@ set gdefault
 
 "" set to use new tab
 set switchbuf+=usetab,newtab
-
-"" GVIM Settings
-if has('gui_running')
-    set guioptions=acimg
-    if g:platform == "Linux" || g:platform == "SunOS"
-        set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
-    endif
-endif
-
