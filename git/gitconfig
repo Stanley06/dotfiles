@@ -42,7 +42,7 @@
     pr = pull --rebase
     r = remote
     rb = rebase
-    l  = log --decorate
+    l = log --decorate --oneline --graph --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold blue)(%ar) %C(bold yellow)%d%C(reset) %C(green)%s%C(reset) %C(dim green)- %an%C(reset)'
     lg = log --decorate --oneline --graph --branches  --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold blue)(%ar) %C(bold yellow)%d%C(reset) %C(green)%s%C(reset) %C(dim green)- %an%C(reset)'
     df = diff
     dfs = diff --stat
