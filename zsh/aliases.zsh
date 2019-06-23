@@ -25,3 +25,4 @@ alias dh='dh -h'
 alias du='du -h'
 alias dud='du -d'
 alias upper="tr '[:lower:]' '[:upper:]'"
+alias sshrestart='killall ssh-agent; eval `ssh-agent`'

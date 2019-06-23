@@ -29,6 +29,7 @@ Plug 'Yggdroot/indentLine'                             " indentline
 Plug 'tpope/vim-vinegar'                               " netrw improvement
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+Plug 'beanworks/vim-phpfmt'
 
 
 " Linux-Only plug-ins
@@ -111,7 +112,7 @@ let g:gitgutter_max_signs = 1000
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlPMRU'
 let g:ctrlp_use_caching = 1 "enable caching
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']  " ignore files in .gitignore
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard | grep -v "compiled_views"']  " ignore files in .gitignore
 let g:ctrlp_working_path_mode = 'ra'
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)$',
@@ -134,6 +135,12 @@ autocmd FileType python set equalprg=autopep8\ -
 " rather than usign vim-clang-format, can also use clang-format.py
 "autocmd FileType python nnoremap <buffer><Leader>cf :<C-u>:pyf ~/bin/clang-format.py<CR>
 "autocmd FileType python inoremap <Leader>cf <ESC>:pyf ~/bin/clang-format.py<CR>
+
+" php formatter
+let g:phpfmt_standard = 'PSR2'
+let g:phpfmt_autosave = 0
+autocmd FileType php nnoremap <buffer><Leader>cf :<C-u>PhpFmt<CR>
+autocmd FileType pph vnoremap <buffer><Leader>cf :PhpFmt<CR>
 
 "  doxygen
 let g:DoxygenToolkit_authorName="Stanley Li <stanleyli0602@gmail.com>"
