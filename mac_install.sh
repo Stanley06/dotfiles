@@ -11,12 +11,12 @@ brew upgrade
 
 #install dependencies
 brew install \
-    vim \
     tmux \
     cmake \
     zsh \
     htop \
-    grip
+    grip \
+    ctags
 
 # keep os included vim (old version) and alias to the updated version
 #alias vim=/usr/local/bin/vim

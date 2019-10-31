@@ -62,10 +62,15 @@ nnoremap <Leader>vv :w<CR>:VimuxPromptCommand<CR>
 nnoremap <Leader>vx :VimuxInterruptRunner<CR>
 
 " vim-grepper mapping
-nnoremap <Leader>gg :call CdRoot()<CR>:GrepperGit
+nnoremap <Leader>gg :call CdRoot()<CR>:GrepperGit 
 
 "ctrlp mapping (ctrlT will open in a new tab)
-nnoremap <leader>ff :CtrlP<CR>
+nnoremap <leader>fp :CtrlP<CR>
+
+" fzf to search from git repo root
+command! FzfFromRoot execute 'Files' FindGitRoot()
+nnoremap <leader>ff :FzfFromRoot<CR>
+
 " Tab handling shortcuts
 " xterm does not work, since only send out Tab key (terminal issue)
 nnoremap <leader>tn :tabnext<CR>

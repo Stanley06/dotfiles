@@ -36,6 +36,10 @@ endfunction
 " cd to the root directory of the current git repo
 function CdRoot()
     cd %:h
-    exec "cd " . system("git rev-parse --show-toplevel")
+    exec "cd " . FindGitRoot()
     pwd
+endfunction
+
+function FindGitRoot()
+    return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
 endfunction

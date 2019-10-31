@@ -26,3 +26,4 @@ alias du='du -h'
 alias dud='du -d'
 alias upper="tr '[:lower:]' '[:upper:]'"
 alias sshrestart='killall ssh-agent; eval `ssh-agent`'
+alias ctags='/usr/local/bin/ctags' # aliase to brew installed ctags, and use `ctags -R .` to generate `tags` file
