@@ -33,6 +33,10 @@ function GetPlatform()
     endif
 endfunction
 
+function FindGitRoot()
+    return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
+endfunction
+
 " cd to the root directory of the current git repo
 function CdRoot()
     cd %:h
@@ -40,6 +44,3 @@ function CdRoot()
     pwd
 endfunction
 
-function FindGitRoot()
-    return system('git rev-parse --show-toplevel 2> /dev/null')[:-2]
-endfunction
