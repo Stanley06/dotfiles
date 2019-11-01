@@ -46,6 +46,8 @@ nnoremap <F8> :TagbarToggle<CR>
 
 " Toggle Gitgutter
 nnoremap <F9> :GitGutterToggle<CR>
+nnoremap <leader>hn :GitGutterNextHunk<CR>
+nnoremap <leader>hp :GitGutterPrevHunk<CR>
 
 " Bael log category at the start of function
 inoremap <F10> <ESC>[[oBAEL_LOG_SET_CATEGORY(LOG_CATEGORY);<ESC><C-o>

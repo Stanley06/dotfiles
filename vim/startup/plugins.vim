@@ -5,6 +5,7 @@ set rtp+=~/.fzf
 call plug#begin('~/.vim/plugged')
 
 Plug 'w0rp/ale'                                        " Asynchronized Syntax checking
+Plug 'junegunn/fzf.vim'                                " Fuzzy search
 Plug 'benmills/vimux'                                  " vim and tmux integration
 Plug 'tpope/vim-fugitive'                              " Fugitive Git Wrapper
 Plug 'christoomey/vim-tmux-navigator'                  " Tmux movement mappings
@@ -15,8 +16,6 @@ Plug 'mhinz/vim-grepper'                               " vim/git-grep integratio
 Plug 'airblade/vim-gitgutter'                          " Diff signs in gutter for Git index/working diffs
 Plug 'Valloric/ListToggle'                             " ListToggle for display of quickfix/location list
 Plug 'godlygeek/tabular'                               " to align by a char
-Plug 'vim-airline/vim-airline'                         " Airline for pretty status/tab lines
-Plug 'vim-airline/vim-airline-themes'                  " airline themes
 Plug 'endel/vim-github-colorscheme'                    " github color schemes
 Plug 'flazz/vim-colorschemes'                          " vim color schemes
 Plug 'vim-scripts/a.vim', { 'for': 'cpp' }             " Alternate for C/C++ Header/Source navigation
@@ -33,7 +32,8 @@ Plug 'tpope/vim-vinegar'                               " netrw improvement
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'beanworks/vim-phpfmt'
-Plug 'junegunn/fzf.vim'
+Plug 'vim-airline/vim-airline'                         " Airline for pretty status/tab lines
+Plug 'vim-airline/vim-airline-themes'                  " airline themes
 
 
 " Linux-Only plug-ins
@@ -47,14 +47,14 @@ call plug#end()
 "filetype plugin indent on
 
 "  vim-airline
+" More themes here (last used 'base16_pop'):
+"   https://github.com/vim-airline/vim-airline-themes/blob/master/doc/airline-themes.txt
 let g:airline_theme='base16_pop'
+let g:airline_left_sep=''
+let g:airline_right_sep=''
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#loclist#enabled = 1
 let g:airline#extensions#hunks#non_zero_only = 1 " git gutter
-
-" disable dumb separators which need patched font
-let g:airline_left_sep=''
-let g:airline_right_sep=''
 
 "  tmuxline config and help
     " tmuxline command help
@@ -82,12 +82,11 @@ let g:tmuxline_preset = {
 let g:VimuxOrientation = "h"
 let g:VimuxHeight = "30"
 
-"  rainbow parenthesis config and help
 let g:rainbow_active = 1
 
-"  gitgutter config and help
-let g:gitgutter_realtime = 0
-let g:gitgutter_eager = 0
+"  gitgutter update time set to 500ms
+set updatetime=500
+let g:gitgutter_enabled = 1
 let g:gitgutter_max_signs = 1000
 
 "  ctrlp config and help
