@@ -80,7 +80,7 @@ nnoremap <leader>tp :tabprevious<CR>
 nnoremap <leader>jd <C-W>]
 nnoremap <leader>jt :tab split<CR><C-]>
 nnoremap <leader>jb <C-O>
-nnoremap <leader>tt :TagbarToggle<CR>
+nnoremap <leader>tb :TagbarToggle<CR>
 
 " Open and source .vimrc and startup scripts
 nnoremap <leader>ev :vsplit $MYVIMRC<CR>
